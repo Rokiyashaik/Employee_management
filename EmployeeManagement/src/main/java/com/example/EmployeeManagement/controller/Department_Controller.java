@@ -18,22 +18,22 @@ public class Department_Controller {
         this.dept_service=dept_service;
     }
 
-    @PostMapping("/adddept")
+    @PostMapping("/addingdeptartment")
     public Department_entity adddept(@RequestBody Department_entity new_dept){
         return dept_service.add_dept(new_dept);
     }
 
-    @GetMapping("/alldept")
+    @GetMapping("/alldepartment")
     public List<Department_entity> alldept(){
         return dept_service.get_alldept();
     }
 
-    @GetMapping("/getdeptbyid/{id}")
+    @GetMapping("/getdepartmentbyid/{id}")
     public Department_entity user_byid(@PathVariable Integer id){
         return dept_service.get_deptbyid(id);
     }
 
-    @PutMapping("/update_dept_put/{id}")
+    @PutMapping("/update_department_put/{id}")
     public Department_entity update_byid(@RequestBody Department_entity new_dept,@PathVariable Integer id){
         return dept_service.update_dept(new_dept,id);
     }
